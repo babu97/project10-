@@ -178,9 +178,17 @@ Add following line:
 
 `* */12 * * *   root /usr/bin/certbot renew > /dev/null 2>&1`
 
+
+![](/cron%20video.PNG)
+
 You can always change the interval of this cronjob if twice a day is too often by adjusting schedule expression.
 
 
+You can always change the interval of this cronjob if twice a day is too often by adjusting schedule expression.
+
+Side Self Study: Refresh your cron configuration knowledge by watching [this video](https://www.youtube.com/watch?v=4g1i0ylvx3A&feature=youtu.be&ab_channel=TechVitals).
+
+You can also use this handy [online cron expression editor](https://crontab.guru/).
 
 
 
