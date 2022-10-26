@@ -101,7 +101,10 @@ In order to get a valid SSL certificate – you need to register a new domain na
 
 You might have noticed, that every time you restart or stop/start your EC2 instance – you get a new public IP address. When you want to associate your domain name – it is better to have a static IP address that does not change after reboot. Elastic IP is the solution for this problem, learn how to allocate an Elastic IP and associate it with an EC2 server [on this page](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html).
 
-3. Update [A record](https://www.cloudflare.com/en-gb/learning/dns/dns-records/dns-a-record) in your registrar to point to Nginx LB using Elastic IP address
+3. Update [A record](https://www.cloudflare.com/en-gb/learning/dns/dns-records/dns-a-record) in your registrar to point to Nginx LB using Elastic IP address or link for any domain register to your public ip  for this project i have used freenom 
+
+![](/link%20to%20your%20profile.PNG)
+
 
 
 Learn how associate your domain name to your Elastic IP [on this page](https://medium.com/progress-on-ios-development/connecting-an-ec2-instance-with-a-godaddy-domain-e74ff190c233).
@@ -115,11 +118,20 @@ Check that your Web Servers can be reached from your browser using new domain na
 
 4. Configure Nginx to recognize your new domain name
 
-Update your nginx.conf with server_name www.<your-domain-name.com> instead of server_name www.domain.com
+Update your nginx.conf with server_name www.<your-domain-name.com> instead of server_name www.domain.com i.e server name to point to server_name and domain to www.mydomain.com
+
+
+![](/url%20after%20pointing.PNG)
+
 
 5. Install [certbot](https://certbot.eff.org/) and request for an SSL/TLS certificate
 
 Make sure [snapd](https://snapcraft.io/snapd) service is active and running
+
+
+To install snap run the command
+
+`sudo apt install snap -y`
 
 
 `sudo systemctl status snapd`
@@ -137,6 +149,11 @@ sudo certbot --nginx
 
 
 Test secured access to your Web Solution by trying to reach *https://<your-domain-name.com>*
+
+![](/let%20encrpt.PNG)
+
+
+
 
 You shall be able to access your website by using HTTPS protocol (that uses TCP port 443) and see a padlock pictogram in your browser’s search string.
 
